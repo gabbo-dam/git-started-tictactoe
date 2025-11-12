@@ -27,6 +27,11 @@ class GameTable {
 		// TODO: Fix win check bug
 		for (let i = 0; i < 3; i++) {
 			this.isWon ||= this.table.slice(i*3, i*3+3).every(v => v === this.player);
+			this.isWon ||= [this.table[0], this.table[3], this.table[6]].every(v => v === this.player);
+			this.isWon ||= [this.table[1], this.table[4], this.table[7]].every(v => v === this.player);
+			this.isWon ||= [this.table[3], this.table[5], this.table[8]].every(v => v === this.player);
+			this.isWon ||= [this.table[0], this.table[4], this.table[8]].every(v => v === this.player);
+			this.isWon ||= [this.table[2], this.table[4], this.table[6]].every(v => v === this.player);
 		}
 		this.winner = this.player;
 	}
